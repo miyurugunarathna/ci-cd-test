@@ -20,6 +20,8 @@ jobs:
           touch .env
           echo REACT_APP_API_KEY = ${{ secrets.API_KEY }} >> .env
           cat .env
+          
+          ls -a .
       - uses: actions/checkout@v2
         with:
           clean: 'false'
