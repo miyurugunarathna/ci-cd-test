@@ -27,7 +27,7 @@ jobs:
         run: yarn install
       - name: yarn build
         env: 
-          REACT_APP_API_KEY: https://github.com/
+          REACT_APP_API_KEY: ${{ secrets.API_KEY }}
         run: yarn build
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.3.0
