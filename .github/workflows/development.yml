@@ -21,6 +21,11 @@ jobs:
         with:
           node-versiom: ${{ matrix.node-version }}
       - run: npm install -g yarn
+      - name: Create env file
+        run: |
+          touch .env
+          echo API_KEY = ${{ secrets.API_KEY }} >> .env
+          cat .env
       - name: yarn install and build
         run: |
           yarn install
