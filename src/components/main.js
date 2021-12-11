@@ -4,7 +4,7 @@ const Main = () => {
     return (
         <div>
             <h3>Hello CI/CD pipeline</h3>
-            <p>Test workflow</p>
+            {process.env.API_KEY && <p>{process.env.API_KEY}</p>}
         </div>
     )
 }
