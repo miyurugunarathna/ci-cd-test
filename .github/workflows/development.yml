@@ -31,7 +31,6 @@ jobs:
           echo API_KEY = ${{ secrets.API_KEY }} >> .env
           cat .env
           ls -a .
-          vi .env
       - name: yarn build
         run: yarn build
       - name: Upload a Build Artifact
