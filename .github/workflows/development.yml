@@ -25,13 +25,9 @@ jobs:
       - run: npm install -g yarn
       - name: yarn install
         run: yarn install
-      - name: Setup .env file
-        run: |
-          touch .env
-          echo API_KEY = ${{ secrets.API_KEY }} >> .env
-          cat .env
-          ls -a .
       - name: yarn build
+        env: 
+          REACT_APP_API_KEY: https://github.com/
         run: yarn build
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.3.0
